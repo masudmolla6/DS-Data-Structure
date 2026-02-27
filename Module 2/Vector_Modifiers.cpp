@@ -22,12 +22,15 @@ int main() {
 
     // v.erase(v.begin()+1);
     // v.erase(v.begin()+1, v.end()-1);
-    v.erase(v.begin()+1, v.begin()+4);
+    // v.erase(v.begin()+1, v.begin()+4);
 
-    for (int x : v)
-    {
-        cout << x << " ";
-    }
+    // for (int x : v)
+    // {
+    //     cout << x << " ";
+    // }
+
+    cout << *(v.end()-1) << endl;
+
     
     
     return 0;
