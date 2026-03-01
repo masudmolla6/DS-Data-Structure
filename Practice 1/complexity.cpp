@@ -35,16 +35,35 @@ int main() {
 
     // O(sqrt(N))
 
-    for (int i = 1; i <= sqrt(n); i++)
-    {
-        if(n%i==0){
-            cout << i << " " << n/i << endl;
-        }
-        else{
-            cout << i << endl;
-        }
-    }
+    // for (int i = 1; i <= sqrt(n); i++)
+    // {
+    //     if(n%i==0){
+    //         cout << i << " " << n/i << endl;
+    //     }
+    //     else{
+    //         cout << i << endl;
+    //     }
+    // }
+    // for (int i = 1; i*i <= n; i++)
+    // {
+    //     if(n%i==0){
+    //         cout << i << " " << n/i << endl;
+    //     }
+    //     else{
+    //         cout << i << endl;
+    //     }
+    // }
     
+
+    // O(NlogN)
+     for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= n; j*=2)
+        {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
     
 
     
