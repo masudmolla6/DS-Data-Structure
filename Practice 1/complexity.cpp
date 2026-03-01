@@ -14,10 +14,38 @@ int main() {
     // }
 
     // O(logN) Logarithmic complexity
-    for (int i = n; i > n ; i/=2)
+    // for (int i = 1; i < n; i*=2)
+    // {
+    //     cout << i << endl;
+    // }
+    // for (int i = n; i >= 1; i/=2)
+    // {
+    //     cout << i << endl;
+    // }
+
+    // O(N*N)
+    // for (int i = 0; i < n; i++)
+    // {
+    //     for (int j = 0; j < n; j++)
+    //     {
+    //         cout << "Hello World" << endl;
+    //     }
+        
+    // }
+
+    // O(sqrt(N))
+
+    for (int i = 1; i <= sqrt(n); i++)
     {
-        cout << i << endl;
+        if(n%i==0){
+            cout << i << " " << n/i << endl;
+        }
+        else{
+            cout << i << endl;
+        }
     }
+    
+    
 
     
     
