@@ -14,10 +14,21 @@ int main() {
     // v.erase(v.begin()+1);
     // v.erase(v.begin(), v.begin()+3);
 
-    for (int i = 0; i < v.size(); i++)
-    {
-        cout << v[i] << " ";
+    // replace(v.begin(), v.end(), 56, 100);
+
+    auto it=find(v.begin(), v.end(), 4);
+
+    if(it!=v.end()){
+        cout << "Found The Value" << endl;
     }
+    else{
+        cout << "Not Found The Value" << endl;
+    }
+
+    // for (int i = 0; i < v.size(); i++)
+    // {
+    //     cout << v[i] << " ";
+    // }
     
     return 0;
 }
