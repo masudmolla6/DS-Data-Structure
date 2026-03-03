@@ -1,0 +1,1 @@
+{"name":"Local: Bruteforce_Binary_Search","url":"e:\\Data Structure\\Module 3\\Bruteforce_Binary_Search.cpp","tests":[{"id":1772515676976,"input":"6 6\n23 45 67 89 23 45\n12\n34\n67\n23\n60\n100","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\Module 3\\Bruteforce_Binary_Search.cpp","group":"local","local":true}
