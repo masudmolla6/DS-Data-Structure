@@ -1,26 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void fun(int* ptr){
-// ptr holo akta pointer variable ja hold kore rakhase main function thake argument hisabe patano {fun(p)} p variable er value (akhan a p variable value mane x variable er address);
+void fun(int* &ptr){
+    int y=200;
+    // cout << "Fun Function ptr Variable Address->" << ptr << endl;
+    ptr=&y;
+    cout << "Fun Function ptr Variable Address->" << ptr << endl;
+    // cout << "Fun Function ptr Variable Address->" <<&ptr << endl;
+    // cout << "Fun Function ptr Variable value->" << *ptr << endl;
 
-    cout << ptr << endl;
 }
 
 int main() {
-    int x=10;  //x akti variable jar value 10;
+    int x=10;
+    // cout << "X Variable Address ->" << &x << endl;
     int* p=&x;
 
-
-    // cout << p << endl;
-    // cout << *p << endl;
-    // cout << &p << endl;
-
-    //p akta pointar variable jar value hocche x variable er Adderss (&x);
-    // *p holo je variable er address hold kore rakhse oi variable er value(x variable er value -> *p dereference kore);
-    // &p holo p pointer variable er address.
-
+    // cout << "Main Function P Variable Address->" << *p << endl;
+    cout << "Main Function P Variable Address->" << p << endl;
+    // cout << "Main Function P Variable Address->" << p << endl;
+    // cout << "Main Function P Variable value->" << *p << endl;
+        
     fun(p);
-    cout << p << endl;
+
+    cout << "Main Function P Variable Address->" << p << endl;
+
     return 0;
 }
