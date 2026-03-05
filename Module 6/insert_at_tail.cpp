@@ -21,14 +21,9 @@ void insert_at_tail(Node* &head, Node* &tail,  int val){
         return;
     }
 
-    if(head==tail){
-        head->next=newNode;
-        tail=newNode;
-    }
-    else{
-        tail->next=newNode;
-        tail=newNode;
-    }
+
+    tail->next=newNode;
+    tail=newNode;
 }
 
 void print_linked_list(Node* head){
