@@ -29,7 +29,7 @@ void print_linked_list(Node* temp){
     if(temp==NULL){
         return;
     }
-    
+
     cout << temp->val << endl;
 
     print_linked_list(temp->next);
@@ -41,11 +41,8 @@ int main() {
     Node* tail=NULL;
 
     int val;
-     while (cin >> val)
+     while (cin >> val && val !=-1)
      {
-        if(val==-1){
-            break;
-        }
         insert_at_tail(head, tail, val);
      }
      
