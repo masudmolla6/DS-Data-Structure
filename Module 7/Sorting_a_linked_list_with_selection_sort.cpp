@@ -26,6 +26,10 @@ void insert_at_tail(Node* &head, Node* &tail, int val){
 }
 
 void sort_linked_list(Node* temp){
+    if(temp==NULL){
+        return;
+    }
+
     for (Node* i = temp; i->next != NULL; i=i->next)
     {
         for (Node* j = i->next; j != NULL; j=j->next)
