@@ -60,7 +60,26 @@ void insert_at_any_position(Node* &head, Node* &tail, int idx, int val){
         insert_at_tail(head, tail, val);
     }
     else{
-        
+        Node* temp=head;
+        for (int i = 1; i < idx; i++)
+        {
+            temp=temp->next;
+        }
+        // cout << temp->val << endl;
+
+        Node* nextNode=temp->next;
+
+        newNode->pre=temp;
+        temp->next=newNode;
+        newNode->next=nextNode;
+
+        if(nextNode!=NULL){
+            nextNode->pre=newNode;
+        }
+        else{
+            tail=newNode;
+        }
+
     }
 }
 
@@ -80,6 +99,7 @@ int main() {
     {
         insert_at_tail(head, tail, val);
     }
+    insert_at_any_position(head, tail, 3, 500);
     print_linked_list(head);
     return 0;
 }
