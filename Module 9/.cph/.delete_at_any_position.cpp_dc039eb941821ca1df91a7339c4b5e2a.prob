@@ -1,0 +1,1 @@
+{"name":"Local: delete_at_any_position","url":"e:\\Data Structure\\Module 9\\delete_at_any_position.cpp","tests":[{"id":1773394452801,"input":"10 20 30 40 50 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\Module 9\\delete_at_any_position.cpp","group":"local","local":true}
