@@ -1,0 +1,1 @@
+{"name":"Local: delete_at_head","url":"e:\\Data Structure\\Module 9\\delete_at_head.cpp","tests":[{"id":1773374270479,"input":"10 20 30 40 50 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\Module 9\\delete_at_head.cpp","group":"local","local":true}
