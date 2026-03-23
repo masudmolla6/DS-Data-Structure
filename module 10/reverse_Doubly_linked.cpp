@@ -28,15 +28,11 @@ void insert_at_tail(Node* &head, Node* &tail, int val){
 }
 
 void reverse_linked_list(Node* &head, Node* &tail, Node* temp){
-    if(temp->next==NULL){
-        head=temp;
-        return;
+    for (Node *i = head, *j=tail; i != j && i->pre != j; i=i->next, j=j->pre)
+    {
+        swap(i->val, j->val);
     }
-
-    reverse_linked_list(head, tail, temp->next);
-    temp->next->next=temp;
-    temp->next=NULL;
-    tail=temp;
+    
 }
 
 void print_linked_list(Node* temp){
