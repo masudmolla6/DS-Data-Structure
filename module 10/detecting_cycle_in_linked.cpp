@@ -23,7 +23,7 @@ int main() {
     a->next=b;
     b->next=c;
     c->next=d;
-    // d->next=b;
+    d->next=c;
 
     Node* fast=head;
     Node* slow=head;
