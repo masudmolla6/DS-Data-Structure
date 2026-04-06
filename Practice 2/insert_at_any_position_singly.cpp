@@ -12,6 +12,19 @@ class Node{
     }
 };
 
+int siz_of_linked_list(Node* temp){
+    int count=0;
+
+    while (temp!=NULL)
+    {
+        count++;
+        temp=temp->next;
+    }
+    
+    return count;
+
+}
+
 void insert_at_head(Node* &head, Node* &tail, int val){
     Node* newNode=new Node(val);
 
@@ -38,6 +51,36 @@ void insert_at_tail(Node* &head, Node* &tail, int val){
     tail=newNode;
 }
 
+void insert_at_any_position(Node* &head, Node* &tail, int val, int idx){
+    int size=siz_of_linked_list(head);
+
+    if(idx<0 ||size<idx){
+        cout << "invalid Index" << endl;
+        return;
+    }
+    else if(idx==0){
+        insert_at_head(head, tail, val);
+    }
+    else if(size==idx){
+        insert_at_tail(head, tail, val);
+    }
+    else{
+        Node* newNode=new Node(val);
+        Node* temp=head;
+
+        for (int i = 1; i < idx; i++)
+        {
+            temp=temp->next;
+        }
+
+        Node* nextNode=temp->next;
+        temp->next=newNode;
+        newNode->next=nextNode;
+
+    }
+
+}
+
 void print_linked_list(Node* temp){
     if(temp==NULL){
         return;
@@ -58,6 +101,7 @@ int main() {
         insert_at_tail(head, tail, val);
     }
 
+    insert_at_any_position(head, tail, 34, 6);
     print_linked_list(head);
     
     return 0;
