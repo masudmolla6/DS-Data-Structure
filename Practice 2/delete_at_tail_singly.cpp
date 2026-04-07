@@ -26,12 +26,13 @@ void insert_at_tail(Node* &head, Node* &tail, int val){
 }
 
 void delete_at_tail(Node* &head, Node* &tail){
-    if(head==NULL)
-        return;
 
-    if(head->next==NULL)
+    if(head->next==NULL){
+        delete head;
+        head=NULL;
         tail=NULL;
-
+        return;
+    }
 
     Node* temp=head;
     
