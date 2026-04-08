@@ -108,7 +108,7 @@ int main() {
         insert_at_tail(head, tail, val);
     }
 
-    insert_at_any_positions(head, tail, 120, 3);
+    insert_at_any_positions(head, tail, 120, 5);
     print_linked_list(head);
     
     return 0;
