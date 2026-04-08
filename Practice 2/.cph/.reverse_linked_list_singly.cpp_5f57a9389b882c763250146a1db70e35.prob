@@ -1,0 +1,1 @@
+{"name":"Local: reverse_linked_list_singly","url":"e:\\Data Structure\\Practice 2\\reverse_linked_list_singly.cpp","tests":[{"id":1775661989912,"input":"10 20 30 40 50 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\Practice 2\\reverse_linked_list_singly.cpp","group":"local","local":true}
