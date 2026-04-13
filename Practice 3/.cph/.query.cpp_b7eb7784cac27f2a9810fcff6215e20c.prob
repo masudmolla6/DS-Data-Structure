@@ -1,0 +1,1 @@
+{"name":"Local: query","url":"e:\\Data Structure\\Practice 3\\query.cpp","tests":[{"id":1776058992408,"input":"6\n0 10\n1 20\n4 30\n0 30\n1 40\n5 50","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\Practice 3\\query.cpp","group":"local","local":true}
