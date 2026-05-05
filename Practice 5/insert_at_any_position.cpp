@@ -48,12 +48,11 @@ void insert_at_tail(Node* &head, Node* &tail, int val){
 }
 
 void insert_at_any_position(Node* &head, Node* &tail, int val, int idx){
-    if(head==NULL)return;
-
     int size=linked_list_size(head);
 
     if(idx>size || idx < 0){
         cout << "Invalid Index" << endl;
+        return;
     }
     else if(idx==0){
         insert_at_head(head, tail, val);
