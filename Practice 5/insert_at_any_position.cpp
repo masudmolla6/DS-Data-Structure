@@ -34,26 +34,6 @@ void insert_at_head(Node* &head, Node* &tail,int val){
     head=newNode;
 }
 
-void insert_at_any_position(Node* &head, Node* &tail, int val, int idx){
-    if(head==NULL)return;
-
-    int size=linked_list_size(head);
-
-    if(idx==0){
-        insert_at_head(head, tail, val);
-    }
-    else if(idx==size){
-        insert_at_tail(head, tail, val);
-    }
-    else{
-        Node* newNode=new Node(val);
-        for (Node i = 0; i < count; i++)
-        {
-            /* code */
-        }
-        
-    }
-}
 
 void insert_at_tail(Node* &head, Node* &tail, int val){
     Node* newNode=new Node(val);
@@ -65,6 +45,35 @@ void insert_at_tail(Node* &head, Node* &tail, int val){
 
     tail->next=newNode;
     tail=newNode;
+}
+
+void insert_at_any_position(Node* &head, Node* &tail, int val, int idx){
+    if(head==NULL)return;
+
+    int size=linked_list_size(head);
+
+    if(idx>size || idx < 0){
+        cout << "Invalid Index" << endl;
+    }
+    else if(idx==0){
+        insert_at_head(head, tail, val);
+    }
+    else if(idx==size){
+        insert_at_tail(head, tail, val);
+    }
+    else{
+        Node* newNode=new Node(val);
+        Node* temp=head;
+
+        for (int i = 0; i < idx-1; i++)
+        {
+            temp=temp->next;
+        }
+        // cout << temp->val << endl;
+        Node* nextNode=temp->next;
+        temp->next=newNode;
+        newNode->next=nextNode;
+    }
 }
 
 void print_linked_list(Node* temp){
@@ -83,7 +92,8 @@ int main() {
         insert_at_tail(head, tail, val);
     }
 
-    insert_at_head(head, tail, 100);
+    // insert_at_head(head, tail, 100);
+    insert_at_any_position(head, tail, 120, 6);
     print_linked_list(head);
     return 0;
 }
