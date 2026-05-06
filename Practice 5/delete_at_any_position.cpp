@@ -95,8 +95,12 @@ void delete_at_any_position(Node* &head, Node* &tail, int idx){
         {
             temp=temp->next;
         }
+
         cout << temp->val << endl;
-        
+
+        Node* deletedNode=temp->next;
+        temp->next=temp->next->next;
+        delete deletedNode;
     }
 
 }
