@@ -1,0 +1,1 @@
+{"name":"Local: practice","url":"e:\\Data Structure\\conceptual session\\week 3\\practice.cpp","tests":[{"id":1778753826345,"input":"a b c d e f stop\n5\nplay b\nplay s\nright\nplay f\nleft","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\conceptual session\\week 3\\practice.cpp","group":"local","local":true}

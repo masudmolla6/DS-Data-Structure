@@ -2,10 +2,8 @@
 using namespace std;
 
 int main() {
-    list<string> playList;
-
+    list<string>playList;
     string song;
-
     while (cin >> song && song!="stop")
     {
         playList.push_back(song);
@@ -14,48 +12,50 @@ int main() {
     int q;
     cin >> q;
 
-    auto current=playList.begin();
+    auto currentSong=playList.begin();
 
     while (q--)
     {
         string cmd;
         cin >> cmd;
-
+        
         if(cmd=="play"){
             string songName;
             cin >> songName;
 
-            auto isFound=find(playList.begin(), playList.end(), songName);
-            if(isFound!=playList.end()){
-                cout << "playing " << *isFound << endl;
-                current=isFound;
+            auto findSong=find(playList.begin(), playList.end(), songName);
+
+            if(findSong!=playList.end()){
+                cout << "playing " << *findSong << endl;
+                currentSong=findSong;
             }
             else{
                 cout << "Not Found" << endl;
             }
         }
         else if(cmd=="right"){
+            auto nextSong=next(currentSong);
 
-            if(next(current)!=playList.end()){
-                current = next(current);
-                cout << "playing " << *current << endl;
+            if(nextSong!=playList.end()){
+                cout << "playing " << *nextSong << endl;
+                currentSong=nextSong;
             }
             else{
                 cout << "Not Found" << endl;
             }
-
         }
         else if(cmd=="left"){
-            if(current!=playList.begin()){
-                current = prev(current);
-                cout << "playing " << *current << endl;
+            auto previousSong=prev(currentSong);
+
+            if(currentSong!=playList.begin()){
+                cout << "playing " << *previousSong << endl;
+                currentSong=previousSong;
             }
             else{
                 cout << "Not Found" << endl;
             }
         }
     }
-    
     
     
     return 0;
