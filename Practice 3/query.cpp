@@ -25,7 +25,7 @@ int main() {
             myList.insert(next(myList.begin(),idx), val);
         }
 
-                // Left to Right
+        // Left to Right
         for (int x : myList) {
             cout << x << " ";
         }
@@ -36,7 +36,7 @@ int main() {
             cout << *it << " ";
         }
         cout << endl;
-        
+
     }
     
     

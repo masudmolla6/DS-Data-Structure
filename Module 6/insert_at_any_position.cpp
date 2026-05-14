@@ -56,6 +56,7 @@ int main() {
     c->next=d;
 
     insert_at_any_position(head, 3, 200);
+    insert_at_any_position(head, 0, 100);
     print_linked_list(head);
     return 0;
 }
