@@ -101,7 +101,7 @@ int main() {
     }
 
 
-    cout << qe.front() << " " << qe.back() << " " << qe.size() << endl;
+    // cout << qe.front() << " " << qe.back() << " " << qe.size() << endl;
     
     
     
