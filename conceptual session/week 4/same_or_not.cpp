@@ -79,12 +79,14 @@ int main() {
         
     }
 
-    if(flag==true){
-        cout << "Same" << endl;
-    }
-    else{
-        cout << "Not Same" << endl;
-    }
+    // if(flag==true){
+    //     cout << "Same" << endl;
+    // }
+    // else{
+    //     cout << "Not Same" << endl;
+    // }
+
+    cout << (flag ? "Same" : "Not Same") << endl;
     
     
     return 0;
