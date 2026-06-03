@@ -1,0 +1,1 @@
+{"name":"Local: elimination","url":"e:\\Data Structure\\Assignment 04\\elimination.cpp","tests":[{"id":1780487266116,"input":"7\n01\n10\n0011\n0101\n01001110\n000111010011\n00011","output":"YES\nNO\nYES\nYES\nNO\nYES\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\Assignment 04\\elimination.cpp","group":"local","local":true}
