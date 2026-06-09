@@ -25,11 +25,14 @@ void laveorder(Node* root){
 
     while (!q.empty())
     {
+        // ber kore ana.
         Node* f=q.front();
         q.pop();
 
+        // oi node ke niye kaj kora.
         cout << f->val << " ";
 
+        // children push kora.
         if(f->left)
             q.push(f->left);
         
