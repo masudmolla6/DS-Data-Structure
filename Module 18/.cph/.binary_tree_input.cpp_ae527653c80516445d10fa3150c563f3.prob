@@ -1,0 +1,1 @@
+{"name":"Local: binary_tree_input","url":"e:\\Data Structure\\Module 18\\binary_tree_input.cpp","tests":[{"id":1781006753094,"input":"10 20 30 40 -1 500 60 -1 -1 -1 -1 -1 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\Module 18\\binary_tree_input.cpp","group":"local","local":true}
