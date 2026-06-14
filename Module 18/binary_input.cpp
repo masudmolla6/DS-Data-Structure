@@ -31,7 +31,7 @@ Node* binary_input(){
 
     while (!q.empty())
     {
-        // 1-Node ber kore ana.
+        // 1-queue take first Node ber kore ana.
         Node* p=q.front();
         q.pop();
 
