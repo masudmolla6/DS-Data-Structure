@@ -1,0 +1,1 @@
+{"name":"Local: inorder","url":"e:\\Data Structure\\Practice 7\\inorder.cpp","tests":[{"id":1781517841489,"input":"10\n20 30\n40 50\n60 -1\n-1 -1\n-1 -1\n-1 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\Practice 7\\inorder.cpp","group":"local","local":true}
