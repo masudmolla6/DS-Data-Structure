@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node{
+    public:
+        int val;
+        Node* left;
+        Node* right;
+
+    Node(int val){
+        this->val=val;
+        this->left=NULL;
+        this->right=NULL;
+    }
+};
+
+Node* input_binary_tree(){
+    int val;
+    cin >> val;
+    Node* root;
+
+    if (val==-1) root==NULL;
+    else root=new Node(val);
+
+    queue<Node*> q;
+
+    if(root) q.push(root);
+
+    while (!q.empty())
+    {
+        // q thake first node ber kore niye asa.
+        Node* p=q.front();
+        q.pop();
+
+        // p-> Parent node er left & right children create kora.
+        int l,r;
+        cin >> l >> r;
+
+        Node* myLeft=NULL;
+        Node* myRight=NULL;
+
+        if(l!=-1) myLeft=new Node(l);
+        if(r!=-1) myRight=new Node(r);
+
+        p->left=myLeft;
+        p->right=myRight;
+
+        // parent er left & right ke q te push kora.
+        if(p->left) q.push(p->left);
+        if(p->right) q.push(p->right);
+
+    }
+
+    return root;
+    
+}
+
+int count_leaf_node(Node* root){
+    if(root==NULL) return 0;
+
+    if(root->left==NULL && root->right==NULL) return 1;
+
+    int l=count_leaf_node(root->left);
+    int r=count_leaf_node(root->right);
+    return l+r;
+}
+
+
+
+int main() {
+    Node* root=input_binary_tree();
+    cout << count_leaf_node(root) << endl;
+    return 0;
+}
