@@ -57,32 +57,42 @@ Node* input_binary_tree(){
 
 bool is_node_present(Node* root, int x){
 
-    bool flag=false;
+    // bool flag=false;
 
-    queue<Node*> q;
+    // queue<Node*> q;
 
-    if(root) q.push(root);
+    // if(root) q.push(root);
 
-    while (!q.empty())
-    {
-        // queue thake front ta ber kore niye asa.
-        Node* p=q.front();
-        q.pop();
+    // while (!q.empty())
+    // {
+    //     // queue thake front ta ber kore niye asa.
+    //     Node* p=q.front();
+    //     q.pop();
 
-        // oi node niye kaj kora.
+    //     // oi node niye kaj kora.
 
-        if(p->val==x){
-            flag=true;
-            break;
-        }
+    //     if(p->val==x){
+    //         flag=true;
+    //         break;
+    //     }
 
-        // parent Node er left & right queue te push kora.
-        if(p->left) q.push(p->left);
-        if(p->right) q.push(p->right);
+    //     // parent Node er left & right queue te push kora.
+    //     if(p->left) q.push(p->left);
+    //     if(p->right) q.push(p->right);
 
-    }
+    // }
     
-    return flag;
+    // return flag;
+
+
+    if(root==NULL) return false;
+    if(root->val==x) return true;
+
+
+    bool l=is_node_present(root->left, x);
+    bool r=is_node_present(root->right, x);
+
+    return (l || r);
 
 }
 
