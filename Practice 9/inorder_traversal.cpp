@@ -69,9 +69,8 @@ void print_inorder_traversal(Node* root){
         return;
     }
 
-    cout << root->val << " ";
-
     print_inorder_traversal(root->left);
+    cout << root->val << " ";
     print_inorder_traversal(root->right);
 }
 
