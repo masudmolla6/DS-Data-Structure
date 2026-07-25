@@ -55,27 +55,45 @@ Node* binary_tree_input(){
     
 }
 
-void binary_tree_print(Node* root){
-    queue<Node*> q;
-    if(root) q.push(root);
+// void binary_tree_print(Node* root){
+//     queue<Node*> q;
+//     if(root) q.push(root);
 
-    while (!q.empty())
-    {
-        // queue thake first node ber kore ana.
-        Node* p=q.front();
-        q.pop();
+//     while (!q.empty())
+//     {
+//         // queue thake first node ber kore ana.
+//         Node* p=q.front();
+//         q.pop();
 
-        // Then Parent node nigye kaj kora.
-        cout << p->val << " ";
+//         // Then Parent node nigye kaj kora.
+//         cout << p->val << " ";
 
-        // Then parent node er left and right node ke queue te push kora.
-        if(p->left) q.push(p->left);
-        if(p->right) q.push(p->right);
+//         // Then parent node er left and right node ke queue te push kora.
+//         if(p->left) q.push(p->left);
+//         if(p->right) q.push(p->right);
+//     }
+// }
+
+int mx_height(Node* root){
+    if(root==NULL){
+        return 0;
     }
+
+    if(root->left==NULL && root->right==NULL){
+        return 0;
+    }
+
+    int leftCount=mx_height(root->left);
+    int rightCount=mx_height(root->right);
+
+    return max(leftCount,rightCount)+1;
 }
+
+
 
 int main() {
     Node* root=binary_tree_input();
-    binary_tree_print(root);
+    int result=mx_height(root);
+    cout << result << endl;
     return 0;
 }
