@@ -55,16 +55,16 @@ Node* input_binary_tree(){
     return root;
 }
 
-void inorder_traversal(Node* root){
+void postorder_traversal(Node* root){
     if(root==NULL) return;
 
-    inorder_traversal(root->left);
+    postorder_traversal(root->left);
+    postorder_traversal(root->right);
     cout << root->val << " ";
-    inorder_traversal(root->right);
 }
 
 int main() {
     Node* root=input_binary_tree();
-    inorder_traversal(root);                         
+    postorder_traversal(root);                         
     return 0;
 }
