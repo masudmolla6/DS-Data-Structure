@@ -64,16 +64,18 @@ Node* input_binary_tree(){
     return root;
 }
 
-void print_preorder_traversal(Node* root){
-    if(root==NULL)
+void print_postorder_traversal(Node* root){
+    if(root==NULL){
         return;
+    }
+
+    print_postorder_traversal(root->left);
+    print_postorder_traversal(root->right);
     cout << root->val << " ";
-    print_preorder_traversal(root->left);
-    print_preorder_traversal(root->right);
 }
 
 int main() {
     Node* root=input_binary_tree();
-    print_preorder_traversal(root); 
+    print_postorder_traversal(root); 
     return 0;
 }

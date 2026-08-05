@@ -55,26 +55,25 @@ Node* binary_tree_input(){
     
 }
 
-int mx_height(Node* root){
+int leaf_node_count(Node* root){
     if(root==NULL){
         return 0;
     }
 
     if(root->left==NULL && root->right==NULL){
-        return 0;
+        return 1;
     }
+    int left_node_coun=leaf_node_count(root->left);
+    int right_node_count=leaf_node_count(root->right);
 
-    int leftCount=mx_height(root->left);
-    int rightCount=mx_height(root->right);
-
-    return max(leftCount,rightCount)+1;  
+    return left_node_coun+right_node_count;
 }
 
 
 
 int main() {
     Node* root=binary_tree_input();
-    int result=mx_height(root);
-    cout << result << endl;
+    int result=leaf_node_count(root);
+    cout << result << endl;  
     return 0;
 }
