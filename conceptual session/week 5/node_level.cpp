@@ -83,6 +83,7 @@ int node_level(Node* root, int searchedValue){
             q.push({p->right, level+1});
     }
 
+    return -1;
 }
 
 int main() {
@@ -92,7 +93,11 @@ int main() {
     Node* root=input_binary_tree();
 
     int result=node_level(root, searchedVal);
-    cout << result << endl;
+
+    if(result==-1)
+        cout << "can't found";
+    else
+        cout << result << endl;
     
     return 0;
 }
