@@ -56,47 +56,22 @@ Node* input_binary_tree(){
 
 }
 
-int mx_height(Node* root){
-    if(root==NULL){
-        return 0;
-    }
 
-    if(root->left==NULL && root->right==NULL){
-        return 0;
-    }
-
-    int leftCount=mx_height(root->left);
-    int rightCount=mx_height(root->right);
-
-    return max(leftCount,rightCount)+1;  
-}
-
-
-int deepest_leaves_sum(Node* root){
-
-    queue<pair<Node*, int>> q;
-    if(root) q.push({root, 1});
-
+int sum_of_leaf_node(Node* root){
+    queue<Node*> q;
+    if(root) q.push(root);
     int sum=0;
-    int mxHeight=mx_height(root);
-
     while (!q.empty())
     {
-        pair<Node*, int> parent=q.front();
+        Node* p=q.front();
         q.pop();
 
-        Node* node=parent.first;
-        int level=parent.second;
+        if(p->left==NULL && p->right==NULL) sum+=p->val;
 
-        if(level==mxHeight){
-            sum+=node->val;
-        }
-
-
-        if(node->left)
-            q.push({node->left, level+1});
-        if(node->right)
-            q.push({node->right, level+1});
+        if(p->left)
+            q.push(p->left);
+        if(p->right)
+            q.push(p->right);
 
     }
 
@@ -106,7 +81,7 @@ int deepest_leaves_sum(Node* root){
 int main() {
     Node* root=input_binary_tree();
 
-    int sum=deepest_leaves_sum(root);
+    int sum=sum_of_leaf_node(root);
 
     cout << sum << endl;
     
