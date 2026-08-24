@@ -54,41 +54,51 @@ Node* input_binary_tree(){
     
 }
 
-int count_node(Node* root){
-    if(root==NULL) return 0;  
+vector<int> rightSideView(Node* root){
+    vector<int> result;
 
-    int left_node_count=count_node(root->left);
-    int right_node_count=count_node(root->right);
+    if(!root) return result;
 
-    return left_node_count+right_node_count+1;
-};
+    queue<Node*> q;
+    q.push(root);
 
-int height_of_binary_tree(Node* root){
-    if(root==NULL) return 0;
+    while (!q.empty())
+    {
+        int size=q.size(); // এই level এ মোট কতগুলো node আছে
 
-    if(root->left==NULL && root->right==NULL) return 0;
+        for (int i = 0; i < size; i++)
+        {
+            Node* node=q.front();
+            q.pop();
 
-    int left_side_height=height_of_binary_tree(root->left);
-    int right_side_height=height_of_binary_tree(root->right);
+            // level এর শেষ node হলেই সেটা right view তে যাবে
+            if(i==size-1){
+                result.push_back(node->val);
+            }
 
-    return max(left_side_height, right_side_height) + 1;
+            if(node->left) q.push(node->left);
+            if(node->right) q.push(node->right);
+        }
+        
+
+    }
+    return result;
+
 }
 
-bool is_perfect(Node* root){
-    int h=height_of_binary_tree(root);
-    int node=count_node(root);
 
-    int expected_node=pow(2, h+1) -1;
-
-    return node==expected_node;
-}
 
 
 int main() {
     Node* root=input_binary_tree();
 
-    if(is_perfect(root)) cout << "Perfect Binary Tree" << endl;
-    else cout << "Not Perfect Binary Tree" << endl;
+    vector<int> rightView = rightSideView(root);
+
+    cout << "Right Side View: ";
+    for(int x : rightView){
+        cout << x << " ";
+    }
+    cout << endl;
 
     return 0;
 }
