@@ -14,25 +14,24 @@ class Node{
     }
 };
 
-Node* tree_input(){
+Node* input_binary_tree(){
     int val;
     cin >> val;
     Node* root=NULL;
-
-    if(val!=-1) root=new Node(val);
+    if(val-1) root=new Node(val);
 
     queue<Node*> q;
     if(root) q.push(root);
+
     while (!q.empty())
     {
-        //node ber kore ana
+        // Node ber kore ana.
         Node* p=q.front();
         q.pop();
 
-        // oi node niye kaj kora 
+        // oi node niye kaj kora.
         int l,r;
         cin >> l >> r;
-
         Node* myLeft=NULL;
         Node* myRight=NULL;
 
@@ -42,41 +41,25 @@ Node* tree_input(){
         p->left=myLeft;
         p->right=myRight;
 
-        // oi node er left and right add kora.
+        // parent node er chil set kora.
         if(p->left) q.push(p->left);
-        if(p ->right) q.push(p->right);
+        if(p->right) q.push(p->right);
     }
     return root;
 }
 
-void tree_print(Node* root){
+void preOrder_traversal(Node* root){
+    if(root==NULL) return;
 
-    if(root==NULL){
-        cout << "Tree is empty" << endl;
-        return;
-    }
-
-    queue<Node*> q;
-    if(root) q.push(root);
-    while (!q.empty())
-    {
-        //node ber kore ana
-        Node* p=q.front();
-        q.pop();
-
-        // oi node niye kaj kora 
-
-        cout << p->val << " ";
-
-        // oi node er left and right add kora.
-        if(p->left) q.push(p->left);
-        if(p ->right) q.push(p->right);
-    }
+    cout << root->val << " ";
+    preOrder_traversal(root->left);
+    preOrder_traversal(root->right);
 }
 
-
 int main() {
-    Node* root=tree_input();
-    tree_print(root);
+    
+    Node* root=input_binary_tree();
+    preOrder_traversal(root);
+
     return 0;
 }
