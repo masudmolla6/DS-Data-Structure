@@ -49,30 +49,23 @@ Node* tree_input(){
     return root;
 }
 
-void tree_print(Node* root){
-    if(root==NULL){
-        cout << "Tree is empty" << endl;
-        return;
-    }
-
-    queue<Node*> q;
-    if(root) q.push(root);
-    while (!q.empty())
-    {
-        //node ber kore ana
-        Node* p=q.front();
-        q.pop();
-        // oi node niye kaj kora 
-        cout << p->val << " ";
-        // oi node er left and right add kora.
-        if(p->left) q.push(p->left);
-        if(p ->right) q.push(p->right);
-    }
+int count_binary_tree(Node* root){
+    if(root==NULL) return 0;
+    
+    int l =count_binary_tree(root->left);
+    int r =count_binary_tree(root->right);
+    return l+r+1;
 }
 
 
 int main() {
     Node* root=tree_input();
-    tree_print(root);
+    int countNode=count_binary_tree(root);
+    if(countNode==0){
+        cout << "NO Tree" << endl;
+    }
+    else{
+        cout << count_binary_tree(root) << endl;
+    }
     return 0;
 }
