@@ -49,24 +49,32 @@ Node* tree_input(){
     return root;
 }
 
-int count_leaf(Node* root){
-    if(root==NULL) return 0;
+int mx_height(Node* root){
+    if(root==NULL){
+        return 0;
+    }
 
-    if(root->left==NULL && root->right==NULL) return 1;
+    if(root->left==NULL && root->right==NULL){
+        return 0;
+    }
 
-    int l=count_leaf(root->left);
-    int r=count_leaf(root->right);
+    int l=mx_height(root->left);
+    int r=mx_height(root->right);
 
-    return l+r;
+    return max(l, r)+1;
 }
+
 
 int main() {
     Node* root=tree_input();
-    int leaf=count_leaf(root);
-    if(root==NULL){
-        cout << "Empty Tree" << endl;
-    }else{
-        cout << leaf << endl;
+    int max_height=mx_height(root);
+
+    if(max_height==0){
+        cout << "NO Tree" << endl;
     }
+    else{
+        cout << max_height << endl;
+    }
+
     return 0;
 }
