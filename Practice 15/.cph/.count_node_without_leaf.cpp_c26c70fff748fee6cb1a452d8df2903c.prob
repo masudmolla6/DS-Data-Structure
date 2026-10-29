@@ -1,0 +1,1 @@
+{"name":"Local: count_node_without_leaf","url":"e:\\Data Structure\\Practice 15\\count_node_without_leaf.cpp","tests":[{"id":1793169748928,"input":"10 20 30 40 50 60 -1  -1 -1 -1 -1 -1 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Data Structure\\Practice 15\\count_node_without_leaf.cpp","group":"local","local":true}
