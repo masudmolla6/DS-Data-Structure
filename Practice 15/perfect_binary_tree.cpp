@@ -70,18 +70,18 @@ bool is_perfect(Node* root){
     if(root==NULL) return false;
 
     int h=mx_height(root);
-    int node=node_count(root);
+    int totallNode=node_count(root);
 
     int expected_node=pow(2,h+1)-1;
 
-    return node==expected_node;
+    return totallNode==expected_node;
 }
 
 int main() {
     Node* root=binary_tree_input();
 
-    if(is_perfect(root)) cout << "Perfect Binary Tree" << endl;
-    else cout << "Not Perfect Binary Tree" << endl;
+    if(is_perfect(root)) cout << "YES" << endl;
+    else cout << "No" << endl;
 
     return 0;
 }

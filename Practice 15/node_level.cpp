@@ -46,9 +46,10 @@ Node* input_binary_tree(){
     return root;
 }
 
-int node_level(Node* root, int searchedValue){
+vector<int> node_level(Node* root, int targetLevel){
     queue<pair<Node*, int>> q;
-    if(root!=NULL) q.push({root, 1});
+    if(root!=NULL) q.push({root, 0});
+    vector<int> v;
 
     while (!q.empty())
     {
@@ -58,20 +59,30 @@ int node_level(Node* root, int searchedValue){
         Node* node=p.first;
         int level=p.second;
 
-        if(node->val==searchedValue) return level;
+        if(level==targetLevel){
+            v.push_back(node->val);
+        }
 
         if(node->left) q.push({node->left, level+1});
         if(node->right) q.push({node->right, level+1});
     }
-    return -1;
+    return v;
 }
 
 int main() {
     Node* root=input_binary_tree();
-    int searchedValue;
-    cin >> searchedValue;
-    int result=node_level(root, searchedValue);
-    if(result==-1) cout << "Not Found" << endl;
-    else cout << "Node Found In Level : " << result << endl;
+    int level;
+    cin >> level;
+    vector<int> levelValues=node_level(root, level);
+    if(levelValues.empty()){
+        cout << "Invalid" << endl;
+    }
+    else{
+        for (int val : levelValues)
+        {
+            cout << val << " ";
+        }
+    }
+
     return 0;
 }
