@@ -83,6 +83,5 @@ int main() {
         cout << "found" << endl;
     else
         cout << "Not Found" << endl;
-    
     return 0;
 }
